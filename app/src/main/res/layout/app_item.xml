@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="100dp"
+    android:layout_height="110dp"
+    android:layout_margin="22dp"
+    app:cardBackgroundColor="#262630"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:id="@+id/app_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Icon at top -->
+        <ImageView
+            android:id="@+id/app_icon_image_view"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginVertical="4dp"/>
+
+        <!-- App name in the middle -->
+        <TextView
+            android:id="@+id/app_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <!-- Toggle (Switch) at the bottom -->
+        <Switch
+            android:id="@+id/lock_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:thumbTint="@color/switch_thumb_tint"/>
+       <!--     -->
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
