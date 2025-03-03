@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#131514">
+    android:background="@drawable/gradient_background"
+    >
     <!--android:background="#AA000000" -->
 
     <!-- Welcome image -->
@@ -20,17 +21,17 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="App Locked Was Activated"
+        android:text="App Locked Was Activated!"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:layout_marginBottom="16dp" />
 
 <TextView
 android:id="@+id/overlay_title"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:text="Enter password to unlock"
+android:text="Enter password to unlock app"
 android:textColor="#FFFFFF"
 android:textSize="18sp"
 android:layout_marginBottom="16dp" />
@@ -50,6 +51,9 @@ android:layout_marginBottom="16dp" />
 android:id="@+id/overlay_unlock_button"
 android:layout_width="wrap_content"
 android:layout_height="wrap_content"
-android:text="Unlock" />
+android:text="Unlock"
+    android:textColor="@color/white"
+    android:backgroundTint="#157278"
+    />
 
     </LinearLayout>

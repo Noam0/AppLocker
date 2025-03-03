@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- כאשר ה־Switch מופעל -->
-    <item android:state_checked="true" android:color="#3ee361" />
+    <item android:state_checked="true" android:color="#53e14e" />
     <!-- כאשר ה־Switch כבוי -->
-    <item android:color="@color/black" />
+    <item android:color="#bfd0d0" />
 </selector>

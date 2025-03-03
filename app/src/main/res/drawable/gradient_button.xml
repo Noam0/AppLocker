@@ -1,0 +1,19 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Define the gradient with your two colors -->
+    <gradient
+        android:startColor="#2b4953"
+        android:endColor="#4a5f6c"
+        android:angle="45"/>
+
+    <!-- Add rounded corners -->
+    <corners
+        android:radius="20dp" />
+
+    <!-- Optional: add a white border -->
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/white" />
+
+</shape>
