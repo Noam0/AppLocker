@@ -16,6 +16,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
 import com.example.applock.Activities.LockScreenActivity;
+import com.example.applock.Utils.AppUtils;
 
 import java.util.List;
 
@@ -58,13 +59,22 @@ public class AppLockService extends Service {
 
         new Thread(() -> {
             while (running) {
-                String foregroundApp = getForegroundApp();
-                Log.d(TAG, "Foreground app: " + foregroundApp);
-                if (!foregroundApp.isEmpty()) {
+                // Use your AppUtils functions to get the current foreground app
+                String foregroundApp = AppUtils.getForegroundApp(this);
+                boolean isHome = AppUtils.isHomeScreen(this);
+                Log.d(TAG, "Foreground app: " + foregroundApp + " isHome: " + isHome);
+
+                // If the home screen is active, reset lastLockedApp so that
+                // if the user goes back to a locked app, it will trigger the overlay.
+                if(isHome) {
+                    lastLockedApp = "";
+                }
+
+                // Proceed only if the foreground app is not the home screen
+                if (!foregroundApp.isEmpty() && !isHome) {
                     // Check if the current foreground app is locked
                     if (AppPreferenceManager.isForegroundAppLocked(foregroundApp)) {
-                        // Check if overlay is not already showing AND
-                        // either it's a new locked app OR we're returning to the same app
+                        // If overlay is not showing and it's either a new locked app or lastLockedApp is empty
                         if (!LockOverlayService.isOverlayShown() &&
                                 (!foregroundApp.equals(lastLockedApp) || lastLockedApp.isEmpty())) {
                             lastLockedApp = foregroundApp;
@@ -72,12 +82,13 @@ public class AppLockService extends Service {
                             changeToLockOverlay(foregroundApp);
                         }
                     } else {
-                        // Reset lastLockedApp if the current app isn't locked
+                        // If the app is not locked, reset lastLockedApp
                         lastLockedApp = "";
                     }
                 }
+
                 try {
-                    Thread.sleep(2000); // Check every 2 seconds
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     Log.e(TAG, "Monitoring thread interrupted", e);
                 }
