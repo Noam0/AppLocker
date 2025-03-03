@@ -98,7 +98,7 @@
 
 <h2>Future Enhancements</h2>
 <ul>
-  <li>🔒 <strong>Biometric Authentication:</strong> Integrate fingerprint or face unlock for faster access.</li>
+  <li>🔒 <strong>Biometric Authentication:</strong> Integrate fingerprint or face unlock for faster access(Next Version).</li>
   <li>📊 <strong>Security Reports:</strong> Provide detailed logs of access attempts for locked apps.</li>
   <li>📱 <strong>Multi-User Support:</strong> Allow separate lock configurations for different users on shared devices.</li>
 </ul>
