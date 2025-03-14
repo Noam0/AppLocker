@@ -3,7 +3,7 @@
 
 <hr>
 
-
+ 
 <h2>Overview</h2>
 <p>AppLockPro is an Android security application designed to provide robust app locking mechanisms using overlay screens, background services, and accessibility services. It allows users to lock selected apps with a password, ensuring that sensitive apps remain protected even when re-accessed. The app monitors active apps in real-time and displays a secure overlay to block unauthorized access.</p>
 
